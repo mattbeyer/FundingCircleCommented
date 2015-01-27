@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if IE 9]><html class="ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html><!--<![endif]-->
+<html>
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"49193ab877","applicationID":"402021","transactionName":"JVoKQRRXX1kARh1fDgdbFxoHTVBBDFtcQE4VXQtC","queueTime":0,"applicationTime":1090,"agent":"js-agent.newrelic.com/nr-476.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgQCWVJADAMCVFNT"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+<script src="//cdn.optimizely.com/js/314702751.js"></script>
+<script src='//use.typekit.net/lza7ooc.js' type='text/javascript'></script>
+<script>
+  try{Typekit.load();}catch(e){}
+</script>
+<meta content="Funding Circle - The Peer to Peer lending marketplace for small business loans" name="title" /><meta content="Business loans funded by thousands of individual investors. Great investment opportunities for investors & fast business lending for small businesses." name="description" /><meta content="Funding Circle, business loans, peer to peer lending, crowdfunding, social lending, peer to business lending, p2p lending" name="keywords" />
+<meta content='7b8QTytnR2PvfFCYk9Zy88HA1CYUqsPlE9X4cW72nqU' name='google-site-verification'>
+<meta content='144A0304624181145746CBCEB87318B1' name='msvalidate.01'>
+<title>Funding Circle - Business Development And Expansion - Expansion/growth
+</title>
+<link href='/favicon.ico' rel='shortcut icon' type='image/x-icon'>
+<meta content='app-id=763454954' name='apple-itunes-app'>
+<!--[if lt IE 9]>
+<script src='/js/html5.js'></script>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<![endif]-->
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="nYASkfeZYOGWJBELT2m/ZqFhqq7Z/KuiAX6wFNzB4Zg=" name="csrf-token" />
+<!-- Legacy Google Analytics -->
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-12550995-2']);
+
+    
+    _gaq.push(['_setCustomVar', 2, 'usertype', "Lender", 2]);
+    _gaq.push(['_setCustomVar', 5, 'status',   "complete", 2]);
+
+    if(typeof(_vis_opt_GA_track) == "function") { _vis_opt_GA_track(); }
+      _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+<!-- Universal Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44761406-1', {
+    cookieDomain: 'fundingcircle.com',
+    userId: "4d835dd8-81e1-11e4-8d90-ca9f56ffd700"
+  });
+  ga('set', 'dimension1', "Lender");
+  ga('set', 'dimension2', "complete");
+  ga('set', 'dimension3', "4d835dd8-81e1-11e4-8d90-ca9f56ffd700");
+  
+  ga('send', 'pageview');
+</script>
+
+<link href="//d2ondqc76inyu3.cloudfront.net/assets/application-cb4d4140860c6751e57d3c888211892e.css" media="screen" rel="stylesheet" type="text/css" />
+<meta title='Funding Circle - Business Development And Expansion - Expansion/growth'>
+<meta description='This Healthcare business seeks a business loan for Expansion/growth.  Funding Circle - A peer to peer lending marketplace for business loans.'>
+<meta keywords='Healthcare, Expansion/growth, Business Development And Expansion, small business finance,&#x000A;business finance, business loans'>
+
+</head>
+<script src="//d2ondqc76inyu3.cloudfront.net/assets/application-4f4ea587e8eefba3cb98b6ca5f9afb24.js" type="text/javascript"></script>
+<meta title='Funding Circle - Business Development And Expansion - Expansion/growth'>
+<meta description='This Healthcare business seeks a business loan for Expansion/growth.  Funding Circle - A peer to peer lending marketplace for business loans.'>
+<meta keywords='Healthcare, Expansion/growth, Business Development And Expansion, small business finance,&#x000A;business finance, business loans'>
+
+<link rel="stylesheet" href="//d2ondqc76inyu3.cloudfront.net/shared_assets/css/shared_assets.css" />
+<script src="//d2ondqc76inyu3.cloudfront.net/shared_assets/js/shared_assets.js"></script>
+<body ng-app='fc'>
+<script>
+// These variables get pushed to be used within Google Tag Manager dashboard
+var dataLayerDev = [];
+dataLayerDev.push({
+  'currentUser': "238600"
+});
+
+var dataLayer = [];
+dataLayer.push({
+  'currentUser': "238600"
+});
+</script>
+
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MT9MXW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MT9MXW');</script>
+
+<div id='pubnub' ssl='on'></div>
+<div id='wrapper'>
+<header class='s-all' id='main-header' role='banner'>
+<div class='wrapper'>
+<p id='logo'>
+<a href='/my-account/'>
+<img alt="Funding Circle - Better for business, better for investors, better all round." src="//d2ondqc76inyu3.cloudfront.net/assets/fc-logo-300-83c9b1e5f753bcbeddca7c2cd36ab092.png" />
+</a>
+</p>
+
+<nav>
+<ul class='main-nav'>
+
+<li><a href="/my-account/my-lending/">Summary</a></li>
+<li><a href="/investors/how-investing-works">How it works</a></li>
+<li><a href="/transfer_in/">Transfer money</a></li>
+<li><a href="/my-account/my-autobid/">Autobid</a></li>
+<li class="investor_text is-active"><a href="/lend/loan-requests/" class="investor_text is-active">Loan requests</a></li>
+<li><a href="/secondary-market">Loan parts</a></li>
+<li><a href="/my-account/sell-my-loans/">Sell</a></li>
+<li><a href="/statistics">Statistics</a></li>
+
+
+
+<li class='menu-opener s-show'>
+<a>Open</a>
+</li>
+<li class='menu-closer s-show'>
+<a>Close</a>
+</li>
+
+</ul>
+<ul class='user-nav' id='account-menu'>
+<li>
+<span class='label'>Available funds</span>
+<span class='val'>&pound;880.00</span>
+</li>
+<li class='sub-menu'>
+<span class='label'>Signed in as</span>
+<span class='val'>matthew william beyer</span>
+<a>Menu</a>
+<ul id='user-actions'>
+<li><a href="/my-account/my-watchlist/">My watchlist</a></li>
+<li><a href="/profile/edit">Edit my profile</a></li>
+<li><a href="https://support.fundingcircle.com/home" target="_blank">Help</a></li>
+<li><a href="/my-account/recommend-to-friends/">Refer a friend</a></li>
+<li>
+<a href='/sign_out'>Sign out</a>
+</li>
+</ul>
+</li>
+<li class='menu-opener s-show'>
+<a>Open</a>
+</li>
+<li class='menu-closer s-show'>
+<a>Close</a>
+</li>
+
+
+</ul>
+</nav>
+<!-- /needs to display if the -->
+</div>
+</header>
+<!-- This notification should show on all the tabs on the logged-in user header (marketplace) -->
+<!-- And only on the home page otherwise -->
+<div class='wrapper'>
+<div class='info_banner'>
+Add funds to your account so you can start lending.
+<a href="/transfer_in">Transfer funds now</a>
+</div>
+</div>
+
+
+<div class='container_block'>
+<div class='container'>
+<script src="https://dh15atwfs066y.cloudfront.net/pubnub-3.1.min.js" type="text/javascript"></script>
+<script src="https://dh15atwfs066y.cloudfront.net/socket.io.min.js" type="text/javascript"></script>
+<div class='hidden' data-auction_id='10125' data-rails-environment='production' data-user_id='238600' id='auction-show'></div>
+<section id='loan_request'>
+<div class='page-header'>
+<div class='pull-right'>
+<form action='/lend/loan-request/watch/10125/' method='post'>
+<input name='onoff' type='hidden' value='1'>
+<button class='btn primary'>add to watch list</button>
+</form>
+</div>
+<h1>
+Business Development And Expansion
+<small>
+Expansion/growth
+(10125)
+</small>
+</h1>
+</div>
+<div class='row'>
+<div class='span16'>
+<ul class='tabs'>
+<li class='active'>
+<a href='#key-information'>Key information</a>
+</li>
+<li>
+<a href='#business-profile'>Business profile</a>
+</li>
+<li>
+<a href='#credit-score'>Credit Score</a>
+</li>
+<li>
+<a href='#financial_summary'>Financial Summary</a>
+</li>
+<li>
+<a href='#questions'>Questions & Answers</a>
+</li>
+<li>
+<a href='#repayments'>Repayments</a>
+</li>
+</ul>
+</div>
+</div>
+<style>
+#loan_request #loan_request_tabs.property, #loan_request #loan_request_tabs.property .pill-content {
+  height: auto;
+}
+</style>
+<div class='row' id='tabs'>
+<div class='span16 white' id='loan_request_tabs'>
+<div class='pill-content'>
+<div class='active' id='key-information'>
+<div class='row top_margin'>
+<div class='span6'>
+<div class='pad'>
+<div class='text_center'><img alt="" src="//d2ondqc76inyu3.cloudfront.net/uploads/BusinessNature/bigdf67250145fef08e004c994cd0c21e8ae3af77ef.jpg" /></div>
+</div>
+</div>
+<div class='span9'>
+<div class='row'>
+<div class='span5'>
+<div class='clearfix'>
+<div id='amount'>£20,000</div>
+</div>
+<div class='clearfix'>
+<div class='hidden' data-updated='1421740685891' id='last-stats-update'></div>
+<div id='rate'>Rate: 10.2%</div>
+</div>
+<div class='clearfix'>
+<div class='mbr-funded progress-bar' id='progress-bar'>
+<div class='bar' id='progress-bar-value' style='width: 100.0%'></div>
+</div>
+<div class='progress-bar-label'>
+<span id='progress-label-value'>
+100%
+-
+<span id='auction-bidding-is-closed'>bidding is closed</span>
+</span>
+</div>
+</div>
+<p class='govt-fund-info'>The final 10% of this loan will be funded by the Government-backed British Business Bank programme. <a href="" class="show-modal">Read more</a></p>
+</div>
+<div class='span4'>
+<dl>
+<dt>&nbsp;</dt>
+<dd>&nbsp;</dd>
+<dt>
+Risk band
+<sup><a href="" class="risk" data-content="The risk band of the borrower. All borrowers at Funding Circle are classified into risk bands ranging from A+ to C-, where A+ is lowest risk.
+&lt;strong&gt;For more information around how Risk Bands are calculated, see &lt;a href=&#x27;https://support.fundingcircle.com/entries/22572457-How-is-the-risk-band-of-my-business-determined-&#x27;&gt;this&lt;/a&gt; page.&lt;/strong&gt;" data-original-title="." rel="popover_click">?</a></sup>
+</dt>
+<dd>
+C 
+</dd>
+<dt>
+Estimated annual bad debt rate
+<sup><a href="" class="" data-content="We estimate that by lending to businesses in this risk band, this is the percentage of bad debt, net of recoveries, that you will experience over the next year. These estimates are provided as a guide only. Actual bad debts vary for each investor. You may incur more or less bad debts than estimated." data-original-title="." rel="popover">?</a></sup>
+</dt>
+<dd>3.3%</dd>
+</dl>
+</div>
+</div>
+<div class='row'>
+<div class='span5'>
+<h3>Borrower details</h3>
+<dl>
+<dt>Borrower name</dt>
+<dd>
+RESTORE SURGERY LIMITED
+</dd>
+<dt>Business nature</dt>
+<dd>Healthcare</dd>
+<dt>Business region</dt>
+<dd>North East</dd>
+<dt>Type</dt>
+<dd>Limited Company</dd>
+<dt>Years trading</dt>
+<dd>
+6
+</dd>
+</dl>
+</div>
+<div class='span3'>
+<h3>Loan details</h3>
+<dl>
+<dt>Term</dt>
+<dd>6 months</dd>
+<dt>
+Loan purpose
+<sup><a href="" class="" data-content="This is the loan purpose the borrower has selected whilst completing their application and provides an overview of what they intend to do with the loan. They can choose from a number of purposes including working capital, expansion and asset purchase. Additional information is provided in their business profile." data-original-title="." rel="popover">?</a></sup>
+</dt>
+<dd>Expansion/growth</dd>
+<dt>
+Director guarantee
+<sup><a href="" class="" data-content="In certain circumstances Funding Circle will request a personal guarantee from directors or major shareholders. If a loan has a guarantee this means that the guarantors have agreed to pay any loan repayments outstanding to investors, if the business fails to make the repayments due for whatever reason. As with all guarantees or security, Funding Circle cannot guarantee that all your loan will be recovered in the event of default." data-original-title="." rel="popover">?</a></sup>
+</dt>
+<dd>Loan guaranteed</dd>
+<dt>
+Asset security
+<sup><a href="" class="" data-content="We require asset security on larger loans which is either: across all a company&#x27;s assets - &#x27;All asset security agreement&#x27;, on property &#x27;Property security agreement&#x27; or on a specific asset - &#x27;Specific asset security - asset owned&#x27; or &#x27;Specific asset security - asset charge&#x27;. Assets can be used to repay investors if the business fails to make repayments due. If asset security is available you can see more information on the Financial Summary tab. As with all guarantees or security, Funding Circle cannot guarantee that all your loan will be recovered in the event of default. For further information on types of asset security, please see our FAQs." data-original-title="." rel="popover">?</a></sup>
+</dt>
+<dd>
+No asset security
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='pad' id='business-profile'>
+<div class='row'>
+<div class='span8'>
+<h3>Who Are We?</h3>
+<p>The business provides reconstructive and cosmetic surgical services to the general public (ie consumers).  We provide a high level of customer care and are in throws of expansion.</p>
+<h3>What Is The Loan For?</h3>
+<p>The Business is currently based in Yorkshire but wishes to expand in to London (Harley Street).  This loan is sought to assist the expanding the services to these areas particularly in relation to marketing with brochures, flyers and other marketing collateral.  It will also assist with the development of the website which needs to be refreshed or rebuilt, online marketing and optimisation of the website. It is hoped that the expansion to London will assist in attracting the high number of foreign clientele who visit the UK each year for these and similar services.  The expansion will also allow us to move into consultancy services.</p>
+<h3>Why Are We Safe To Lend To?</h3>
+<p>The business has been in existence for over 5 years.  It has typically low overheads and has enjoyed a healthy bank balance.  The Consultant Surgeon has over 19 years experience as an NHS and private Consultant Plastic Surgeon and has enjoyed an extremely good reputation of a caring and highly skilled surgeon.  Please view the testimonials on the website at www.restoresurgery.com. </p>
+</div>
+<div class='span6' style='font-weight: 300;'>
+<br>
+These answers are provided by the borrower and Funding Circle does not control the content.
+</div>
+</div>
+
+</div>
+<div class='pad' id='credit-score'>
+<div class='row'>
+<div class='row'>
+<div class='span8'>
+<div class='text_center' id='credit-history-chart'></div>
+</div>
+<div class='span6'>
+<div class='text_center' id='relative-score-chart'></div>
+</div>
+</div>
+<div class='row'>
+<div class='span16'>
+<div class='text_center'>This data was supplied when the loan was initially requested, in December 2014</div>
+</div>
+</div>
+</div>
+<br>
+<div class='row'>
+<div class='span10'>
+<p>
+These scores represent the Delphi Score from Experian, a third party information services and credit assessment company, which helps businesses to manage credit risk and prevent fraud.
+</p>
+<p>
+The Delphi Score is derived from a range of data, including but not limited to:
+<br>
+- director’s commercial track record
+<br>
+- financial trend information
+<br>
+- commercial invoice payment performance
+<br>
+- size and age of business
+<br>
+- industry sectors and geographical region
+<br>
+- director’s consumer scorecards
+<br>
+- CCJs and bankruptcies (current and historical)
+<br>
+</p>
+<p>
+The Delphi Score, whilst considered within Funding Circle’s overall assessment of a potential borrower, is ultimately independent of the risk band assigned by Funding Circle.
+</p>
+<p>
+For more information on the Experian Delphi score
+<a href='http://www.experian.co.uk/business-information/commercial-delphi.html' target='_blank'>click here</a>
+</p>
+</div>
+</div>
+
+</div>
+<div id='financial_summary'>
+<div class='text_center loading_div'>Loading...</div>
+</div>
+<div id='questions'>
+<div class='text_center loading_div'>Loading...</div>
+</div>
+<div id='repayments'>
+<div class='text_center loading_div'>Loading..</div>
+</div>
+</div>
+</div>
+<div class='span16 white' style='height: 30px;'>
+<a class='back_to_listings' href='/lend/loan-requests/'>
+<b>&lt; Back to listings</b>
+</a>
+</div>
+</div>
+<div class='row top_margin'>
+<div class='span16 white'>
+<div class='pad'>
+<h2 id='bidding-is-closed-explanation'>
+Bidding is closed
+</h2>
+<p>
+Bidding has closed on this auction because the loan is 100% funded at the <a href="#mbr-modal" class="activate-modal">minimum bid rate</a> for this risk band.
+</p>
+<p>
+<a class='external-link' href='/lend/loan-requests/'>Find more loan requests to bid on</a>
+</p>
+</div>
+</div>
+<div class='span16 white'>
+<div class='pad'>
+<div class='row'>
+<div class='span15'>
+<div class='row'>
+<div class='span11' style='padding-top: 5px; padding-bottom: 5px'>
+<div class='row'>
+<div class='span11'>
+<ul class='tabs bids'>
+<li class='active'>
+<a href='#bids-summary'>Bid summary</a>
+</li>
+<li>
+<a href='#bids-all'>All bids</a>
+</li>
+<li>
+<a href='#bids-mine'>My bids (<span id="my-bid-count">120</span>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class='row top_margin'>
+<div class='span15'>
+<div class='tab-content'>
+<div class='active ajax-tab loaded tab-pane' id='bids-summary'>
+<div class='scroll-box' id='bids_summary' style='height: 400px'>
+<table class='brand'>
+<thead>
+<tr>
+<th>
+Rate
+</th>
+<th>
+Amount
+</th>
+<th>
+Status
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class='rejected_102 rejected' data-amount='60' data-annualised_rate='10.2' data-created_at='0' data-my-bids='0' data-status='rejected' data-total-bids='3' id='rejected_102'>
+<td>
+10.2%
+</td>
+<td>
+<span class='amount_value'>&pound;60</span>
+</td>
+<td class='status'><img alt="Rejected" src="//d2ondqc76inyu3.cloudfront.net/images/icons/red_cross.png" /></td>
+</tr>
+<tr class='live_102 live' data-amount='18000' data-annualised_rate='10.2' data-created_at='0' data-my-bids='0' data-status='live' data-total-bids='235' id='live_102'>
+<td>
+10.2%
+</td>
+<td>
+<span class='amount_value'>&pound;18,000</span>
+</td>
+<td class='status'><img alt="Live" src="//d2ondqc76inyu3.cloudfront.net/images/icons/green_tick.png" /></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+<div class='tab-pane ajax-tab' id='bids-all'>
+<div class='text_center loading_div'>Loading...</div>
+</div>
+<div class='tab-pane ajax-tab' id='bids-mine'>
+<div class='text_center loading_div'>Loading...</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='modal-content on-legacy is-hidden' id='mbr-modal'>
+<p>
+The minimum rate you can bid at on a new loan. Minimum bid rates will vary
+according to the risk band a business is in, to reflect the associated
+risk of each band. The minimum bid rate for each loan will be shown as the
+lowest rate available on each individual loan request page.
+</p>
+</div>
+
+</div>
+</section>
+
+</div>
+</div>
+</div>
+<div class='modal fade in is-hidden' id='calculation'>
+<div class='modal-header'>
+<a class='close' data-dismiss='modal'>x</a>
+<h2>Calculating the average net return</h2>
+</div>
+<div class='modal-body'>
+<div id='average-net-return-calculation'>
+<p>
+The return is a percentage, calculated to show the return investors* have earned through Funding Circle after fees and bad debt, but before tax, over an annualised period.
+</p>
+<p>
+To calculate it we take the following:
+</p>
+<dl>
+<dt>Daily cashflows (C):</dt>
+<dd>
+These are the cashflows in and out of each investor's account, including:
+<ul>
+<li>Any amounts lent to businesses – this amount is registered from the day your bid is placed.</li>
+<li>Any amounts received – in repayments (which include interest and principal), any proceeds from secondary market sales and any promotional earnings. These are net of fees.</li>
+</ul>
+These cashflows do not include:
+<ul>
+<li>Any deposits into your account which are not yet lent to businesses</li>
+<li>Any withdrawals</li>
+</ul>
+</dd>
+<p>We take the sum of the cashflows for every day the investor has been lending (ie, from day 1 right through to the current day).</p>
+<dt>Principal outstanding at the end of the period (P):</dt>
+<p>This will reflect the outstanding amount lent to businesses, less any bad debts you have incurred during the period</p>
+<dt>Accrued interest throughout the period (I):</dt>
+<p>This is the amount of interest you have earned up until the current day but has not yet been paid to you</p>
+</dl>
+<p>The above inputs are taken over a given time period so we can calculate the return for each investor, whereby:</p>
+<dl>
+<dt>N = the total number of days since you started lending</dt>
+</dl>
+<p>We create an annualised return figure ( r ) by calculating this over a 365 day period.</p>
+<p>We then use this formula to calculate the return:</p>
+<img src='/assets/how_it_works/rate_calculation.png'>
+<br>
+<br>
+<strong>Limitations to this calculation</strong>
+<p style='margin-top:4px'>This return expression is just one way to show the returns investors have made through Funding Circle. We think it is the most useful and accurate way to measure investment performance because it takes into account both our fees and any bad debts but as with many calculations it has some limitations, including:</p>
+<ul>
+<li>
+It is before tax: as different investors have different tax rates and some earnings are taxed differently.
+<a href='https://support.fundingcircle.com/entries/22557912-What-are-the-tax-consequences-of-lending-as-an-individual-' target='_blank'>Read more.</a>
+</li>
+<li>
+It does not include any amounts not lent to businesses
+</li>
+<li>
+It does not include the end-to-end cycle of loan repayments
+</li>
+<li>
+Past returns are not necessarily a guide to future returns
+</li>
+</ul>
+<p>
+There are other methods for evaluating historical or potential investment return that you could choose to use instead and you may want to consider these methods as well.
+</p>
+</div>
+
+</div>
+<div class='modal-footer'>
+<a class='close btn'>Done</a>
+</div>
+</div>
+<div class='modal fade in is-hidden' id='band-calculation'>
+<div class='modal-header'>
+<a class='close'>x</a>
+<h2>Calculating your return</h2>
+</div>
+<div class='modal-body'>
+<p>
+This estimated return is your return after fees and bad debt, but before tax.
+This calculation takes your bid rate and deducts the 1% annual investor fee and estimated bad debts for this risk band (based on a fully diversified portfolio lending to all businesses within that risk band).
+</p>
+<p>
+Annualised, estimated bad debts by risk band are:
+</p>
+<ul>
+<li>
+A+ = 0.6% (ie, each year we expect 0.6% of all loans to A+ businesses to become bad debts)
+</li>
+<li>
+A = 1.5%
+</li>
+<li>
+B = 2.3%
+</li>
+<li>
+C = 3.3%
+</li>
+<li>
+C- = 5%
+</li>
+</ul>
+<p>
+These estimates are provided as a guide only. Actual bad debts vary for each investor. You may incur more or less bad debts than estimated. With lending to businesses, there is the risk that the value of your investment could go down as well as up. Returns are shown before tax, to read more about tax treatment click
+<a href='https://support.fundingcircle.com/entries/22557912-What-are-the-tax-consequences-of-lending-as-an-individual-' target='_blank'>here.</a>
+</p>
+</div>
+</div>
+
+<footer id='footer'>
+<section class='footer-stats'>
+<div class='wrapper'>
+<div class='stat-box s-hidden m1-m4'>
+<h3>
+<em>36,503</em>
+<span>investors in the UK</span>
+</h3>
+<p>have lent to businesses</p>
+</div>
+<div class='stat-box s-hidden m5-m8'>
+<h3>
+<em>
+&pound;491,017,940
+</em>
+</h3>
+<p>lent to British businesses</p>
+</div>
+</div>
+</section>
+<ul class='wrapper' id='footer-links'>
+<li><a href="https://support.fundingcircle.com/anonymous_requests/new" target="_blank">Contact us</a></li>
+<li><a href="/about-us/">About us</a></li>
+<li><a href="https://support.fundingcircle.com/" target="_blank">Help</a></li>
+<li><a href="/media/">Media</a></li>
+<li><a href="/home/terms-and-conditions">Terms of use</a></li>
+<li><a href="/home/security">Security</a></li>
+<li><a href="https://forum.fundingcircle.com">Forum</a></li>
+<li><a href="https://www.fundingcircle.com/blog/">Blog</a></li>
+<li><a href="/businesses/intermediaries">Intermediaries</a></li>
+<li><a href="/about-us/jobs">Jobs</a></li>
+<li><a href="/about-us/cookie-policy">Cookie policy</a></li>
+<li><a href="https://fundingcircle.zendesk.com/forums/22821496-API" target="_blank">API</a></li>
+<li><a href="https://www.fundingcircle.com/blog/partners" target="_blank">Partners</a></li>
+<li><a href="/offers" target="_blank">Offers</a></li>
+<li><a href="/statistics">Statistics</a></li>
+<li><a href="/information-packs/investor-information.pdf" target="_blank">Guide</a></li>
+</ul>
+
+<div id='footer-extras'>
+<div class='wrapper'>
+<div class='l1-l13 m1-m6'>
+<p>Investment through Funding Circle involves lending to small and medium sized businesses, so your investment can go down as well as up.</p>
+<p>Funding Circle Limited is authorised and regulated by the Financial Conduct Authority under firm registration number 635439. Funding Circle is not covered by the Financial Services Compensation Scheme. Registered in England (Co. No. 06968588) with registered office at 3 Dorset Rise, London, EC4Y 8EN.</p>
+
+<p>Copyright &copy; Funding Circle 2015. All rights reserved.</p>
+</div>
+<div class='l14-l16 m7-m8'>
+<div fc-country-select selected="uk"></div>
+<div class='comodo-ssl'>
+<img alt="Comodo" src="//d2ondqc76inyu3.cloudfront.net/assets/icons/comodo.png" />
+</div>
+
+</div>
+</div>
+</div>
+</footer>
+<!--[if IE 8]>
+<script src='/assets/css3-mediaqueries.js'></script>
+<![endif]-->
+<script src='/assets/froogaloop.min.js'></script>
+
+<script src="//d2ondqc76inyu3.cloudfront.net/assets/extra-48e3239a6a12e66ac5358efdb3c6a02e.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    $(function(){
+      var loaded = {};
+      var close_date = $("#auction-end").attr('data-close-date');
+    
+      $('#auction-end').countdown({until: close_date,
+        significant: 2,
+        labels: ['yrs', 'mo', 'wks', 'days', 'hr', 'min', 'sec'],
+        labels1: ['yr', 'mo', 'wk', 'day', 'hr', 'min', 'sec'],
+        onExpiry: function() { setTimeout(function() { window.location.href = window.location.href; }, 2000); },
+        layout: 'Only {d<}{dn} {dl} {d>}{h<}{hn} {hl} {h>}{m<}{mn} {ml} {m>}{s<}{sn} {sl}{s>} left'
+      });
+    
+      populate_tab = function(e) {
+        targetUrl = $(e.target).attr('href');
+        switch(targetUrl) {
+        case '#credit-score':
+          if (!loaded['charts']) {
+            var isSoleTrader = false;
+            if (isSoleTrader) {
+              return;
+            }
+    
+            var have_chart_data = true;
+            if (have_chart_data) {
+              $('#relative-score-chart').fcChart('bar', {data: {"values":[[100,46,58,59,50]],"labels":["This business","All","Industry","Size","Age"]},
+                                                         title: "Business relative score",
+                                                         width: 440,
+                                                         height: 320,
+                                                         ymin: 0,
+                                                         ymax: 100,
+                                                         recolorFirst: true
+                                                        });
+    
+              $('#credit-history-chart').fcChart('line', {data: [{"label":"Dec","value":15},{"label":"Jan","value":15},{"label":"Feb","value":15},{"label":"Mar","value":15},{"label":"Apr","value":15},{"label":"May","value":15},{"label":"Jun","value":15},{"label":"Jul","value":15},{"label":"Aug","value":15},{"label":"Sep","value":15},{"label":"Oct","value":15},{"label":"Nov","value":89}],
+                                                         title: "Business credit history",
+                                                         width: 440,
+                                                         height: 320,
+                                                         ymin: 0,
+                                                         ymax: 100,
+                                                         smooth: false,
+                                                         tickDistance: 10
+                                                        });
+            }
+            loaded['charts'] = true;
+          }
+          break;
+        case '#questions':
+          get_and_update('questions');
+          break;
+        case '#financial_summary':
+          get_and_update('financial_summary');
+          break;
+        case '#repayments':
+          get_and_update('repayments');
+          break;
+        case '#bids-all':
+          load_bid_tab('bids-all', "/loans/52256/auction/bids?loan_id=52256",targetUrl);
+          break;
+        case '#bids-mine':
+          load_bid_tab('bids-mine', "/loans/52256/auction/my_bids?loan_id=52256",targetUrl);
+          break;
+        case '#bids-summary':
+          load_bid_tab('bids-summary', "/loans/52256/auction/bid_summary?loan_id=52256",targetUrl);
+          break;
+        };
+      }
+    
+    
+      function get_and_update(action, url) {
+        if (!loaded[action]) {
+          if (!url) {
+            if(action == 'questions') {
+              url = '/loans/52256/questions?rnd=8254';
+            } else if (action == 'financial_summary'){
+              url = '/loans/52256/financial_summary/?rnd=2019';
+            } else {
+              url = '/lend/loan-request/'+action+'/52256/?rnd=2156';
+            }
+          }
+    
+          $.get(url, function(ret) {
+            $('#' + action).html(ret);
+            // Register added HTML with angular for validations
+            angular.bootstrap($('#' + action), ['fc']);
+            $('#' + action + ' a[rel="popover"]').popover({ offset: 10, trigger: "hover" });
+            loaded[action] = true;
+          }, 'html');
+        }
+      }
+    
+      function remove_error_messages() {
+          alert_message = $('.alert-message')
+            if (alert_message.size() > 0) {
+              alert_message.remove()
+            }
+      }
+    
+      function display_bid_notice(json_bid){
+          remove_error_messages()
+          fc.notifications.add({
+              title: 'New bid!',
+              content: '<p>You bid £'+json_bid['amount']+' at '+json_bid['annualised_rate']+'%</p>',
+              timeout: 3500,
+              withTime: false
+          });
+      }
+    
+      function display_error_message(json_error){
+          $('div.message-container').append(
+              $('<div>').addClass('alert-message ' + json_error['type']).append(
+                  $('<img>').attr('src', '/images/icon_' + json_error['type'] + '.png'),
+                  $('<span>').html(json_error['text'])
+              )
+          );
+      }
+    
+      function update_auction_stats(json_stats){
+          $.each(json_stats, function(key,value){
+              $('#'+key+'.value').html(value);
+          });
+          if ($.trim($('#progress-label-value').text()) == '100%'){
+            (!fc.realtime.enabled()) && $('#bid_annualised_rate option').filter(function(){
+                  return Number($(this).attr('value')) > json_stats['max_rate']
+            }).remove();
+          }
+      }
+    
+      function load_bid_tab(name,target,hash){
+        get_and_update(name, target);
+        $('#' + name).addClass('loaded');
+      }
+    
+      function reload_bid_tab(tab){
+          delete loaded[$(tab).attr('href').replace('#','')];
+          populate_tab({target: tab});
+      }
+    
+      function reload_active_bid_tab(){
+          active_tab =  $('ul.tabs.bids li.active a')[0];
+          if(active_tab) reload_bid_tab(active_tab);
+      }
+    
+      function alter_my_bid_count(action) {
+          var n = $('#my-bid-count').text() * 1;
+    
+          n = (action == 'increment') ? (n + 1) : (n - 1);
+    
+          $('#my-bid-count').text(n);
+      }
+    
+      $('ul.bids li a').mousedown(function(){
+        window.location.hash = $(this).attr('href') + '-ref';
+      });
+    
+      function set_realtime_cookie(days){
+          var expiry_date = new Date();
+          expiry_date.setTime(expiry_date.getTime()+(days*24*60*60*1000));
+          document.cookie = 'realtime=on; expires='+expiry_date.toGMTString()+'; path=/;';
+      }
+    
+      function start_realtime(){
+          var my_bids_tab = $("a[href='#bids-mine']");
+          if (my_bids_tab.not('.loaded')) reload_bid_tab(my_bids_tab);
+          fc.realtime.start();
+          if (fc.realtime.enabled()){
+            $('.beta-switch-message').find('span.is-off').hide().end().find('span.is-on').show();
+          }
+      }
+    
+      function stop_realtime(){
+          set_realtime_cookie(-1);
+          location.reload();
+      }
+    
+      create_bid_callback = function(json){
+          $('button.bid').removeClass('disabled');
+          $('div.message-container').empty();
+          if (json['status'] == 'ok'){
+              update_auction_stats(json['stats']);
+              display_bid_notice(json['bid']);
+              alter_my_bid_count('increment');
+              $('form#new_bid').data('last-bid',json['bid']['bid_id']);
+              (!fc.realtime.enabled()) && reload_active_bid_tab();
+          }else{
+              display_error_message(json['message']);
+          }
+      }
+    
+      //toggle realtime bidding
+      $('a#realtime.beta-switch').mousedown(function(e) {
+         e.preventDefault();
+         target = $(e.target);
+         target.toggleClass('on');
+         if (target.hasClass('on')){
+           $(".ajax-tab.loaded").each(function(e){ reload_bid_tab($('a[href="#'+this.id+'"]')) });
+           (document.cookie.indexOf('realtime')==-1) && set_realtime_cookie(28);
+           start_realtime();
+         } else {
+           stop_realtime();
+         }
+      });
+    
+      $('a#realtime.beta-switch').click(function(e) {
+        e.preventDefault();
+      });
+    
+      $('button.bid.ajax').click(function(e) {
+          e.preventDefault();
+          var bid_button = $('button.bid');
+          if (!bid_button.hasClass('disabled')){
+              var rate = $('#bid_annualised_rate option:selected').val();
+              var amount = $('#bid_amount option:selected').val();
+              bid_button.addClass('disabled');
+              $.ajax({
+                   type: 'POST',
+                   url: $('form.new_bid').attr('action'),
+                   data: { bid: { annualised_rate: rate,
+                                  amount: amount } },
+                   success: create_bid_callback,
+                   dataType: 'json'
+              });
+          }
+      });
+    
+      $('.tabs').tabs().bind('change', populate_tab);
+    
+      $(document).ready(function(){
+    
+        if ($('#realtime').hasClass('on') && !fc.realtime.enabled()){
+          start_realtime();
+        }
+    
+        //make sure the correct tab has been loaded
+        if (window.location.hash){
+          clean_hash = window.location.hash.replace('-ref','');
+          active_tab = $("a[href='"+clean_hash+"']");
+          active_tab.click();
+          if ($('div.tab-pane.active').not('.loaded')) reload_bid_tab(active_tab);
+        }
+      });
+    });
+    
+    $(function() {
+    
+      if ($('#bid_annualised_rate').length) {
+        $('#bid_annualised_rate').bind('change', update_bid_label);
+        update_bid_label();
+      }
+    
+      function update_bid_label() {
+        var prefix   = $('#new_bid button span').attr("data-prefix");
+        var new_rate = $('#bid_annualised_rate option:selected').html();
+        var $averageReturn = $("span.average-net-return");
+        var risk_band = $.trim( $averageReturn.data('risk-band') );
+        var fc_fee_percent = $averageReturn.data('fc-fees');
+        var bad_debt_rate = $averageReturn.data('bad-debt-rate')/100;
+        if (!new_rate.match(/choose/i)) {
+          $('#new_bid button span').html(prefix +  " at " +  new_rate);
+        }
+    
+        //update the ave net return
+        if( !isNaN( parseFloat(new_rate)) ) {
+          $('.net-return').show();
+          $("span.average-net-return").text( fc.calculations.averageNetRate( parseFloat(new_rate), parseFloat(fc_fee_percent), parseFloat(bad_debt_rate))  + '%').fadeOut("fast").fadeIn("slow").fadeOut("fast").fadeIn("fast");
+        }
+      }
+    });
+    
+    $(function() {
+        $('.toggle-bid-group').live('click', function(e) {
+            e.preventDefault();
+    
+            var self   = $(this);
+            var gid    = self.attr('id');
+            var prompt = self.children('span');
+    
+            if ($('.' + gid).css('display') == 'none'){
+                $('.' + gid).css('display','table-row');
+            }else{
+                $('.' + gid).css('display','none');
+            }
+    
+            if (prompt.text().match(/show/)) {
+                prompt.text(self.data('hide-prompt'));
+            } else {
+                prompt.text(self.data('show-prompt'));
+            }
+        });
+    
+        $("a.show-modal").on('click', function( ev ) {
+          ev.preventDefault();
+          var modalDOM = '';
+    
+          modalDOM = '<div class="modal hide fade govt-modal">';
+          modalDOM += '<div class="modal-header">';
+          modalDOM += '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+          modalDOM += '<h2>Government-backed British Business Bank programme Lending through Funding Circle</h3>';
+          modalDOM += '</div>';
+          modalDOM += '<div class="modal-body">';
+          modalDOM += '<p>From March 2014, the British Business Bank programme started supporting lending to small businesses through the Funding Circle platform as part of a &pound;40m commitment from its &pound;300m Investment Programme.</p>';
+          modalDOM += '<p>The British Business Bank Investment Programme is a part of the British Business Bank programme, which is currently run directly by the Department for Business, Innovation and Skills and is not authorised or regulated by the Financial Conduct Authority or the Prudential Regulation Authority. ';
+          modalDOM += 'British Business Bank plc will operate as a Government-owned financial institution once HM Government has received European Commission State aid clearance, which is expected in 2014.';
+          modalDOM += '</p>';
+          modalDOM += '<p>The objective of the British Business Bank programme is to support economic growth by bringing together public and private sector funds to create more effective and efficient finance markets for smaller businesses in the UK.  This includes:</p>';
+          modalDOM += '<ul style="font-size: 16px;">';
+          modalDOM += '<li>increasing the amount and types of debt financing  available to small and medium-sized businesses; and,</li>';
+          modalDOM += '<li>supporting the development of more diverse  financing markets for small and medium-sized businesses.</li>';
+          modalDOM += '</ul>';
+          modalDOM += '<p>The British Business Bank programme’s investment through the Funding Circle platform is made alongside investors from the private sector on equivalent terms, ';
+          modalDOM += 'and represents the final 10 per cent of funding requested by a borrower once private sector funding commitments reach 90 per cent of the amount requested.';
+          modalDOM += '</p>';
+          modalDOM += '<p>The British Business Bank programme’s funding does not provide an endorsement, recommendation or any warranty, either expressed or implied, ';
+          modalDOM += 'about the creditworthiness of a borrower or the activities and procedures of Funding Circle, and its funding has the same risk of loss as for any private sector investor.</p>';
+          modalDOM += '<p>Neither the British Business Bank programme, which is run directly by the Department for Business, Innovation and Skills, ';
+          modalDOM += 'the Department for Business, Innovation and Skills nor any other government department or agency is involved with the operation or management of Funding Circle.</p>';
+          modalDOM += '</div>';
+          modalDOM += '<div class="modal-footer">';
+          modalDOM += '<a class="btn">Close</a>';
+          modalDOM += '</div>';
+          modalDOM += '</div>';
+    
+    
+          $( this ).after( modalDOM );
+    
+          $("div.govt-modal").modal({
+            backdrop: true
+          }).modal('show');
+    
+    
+          $("div.govt-modal").on('hidden', function( e ) {
+            e.preventDefault();
+            var $modal  = $(this);
+            $modal.remove();
+          });
+    
+          $("div.govt-modal").on('click','a.btn', function( e ) {
+            e.preventDefault();
+            var $modal  = $(this).closest('div.govt-modal');
+            $modal.find('button.close').trigger('click');
+          });
+        });
+    
+      $('#auction-bidding-is-closed').click(function() {
+        var explanation = $('#bidding-is-closed-explanation');
+        $('html, body').animate({scrollTop: explanation.offset().top - 20}, 1000);
+      })
+    });
+    
+    
+    
+    $(function(){
+      $('body').addClass('fully-loaded');
+    });
+  //]]>
+</script>
+
+</body>
+</html>
